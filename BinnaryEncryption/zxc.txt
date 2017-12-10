@@ -1,0 +1,65 @@
+package main;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class LinesDrawingingExample extends JFrame {
+	public LinesDrawingingExample(){
+		super("Maze demo");
+		setSize(597,544);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+	}
+	public void drawLines(Graphics g){
+		String first,second;
+		first=JOptionPane.showInputDialog(null,"Enter X","First Number",JOptionPane.INFORMATION_MESSAGE);
+		int x =0,y=0; 
+				x=Integer.parseInt(first);
+				
+		if(x<170){
+			JOptionPane.showMessageDialog(null, "X must be more than 169!","Error",JOptionPane.ERROR_MESSAGE);
+			first=JOptionPane.showInputDialog(null,"Enter X","First Number",JOptionPane.INFORMATION_MESSAGE);
+			x=Integer.parseInt(first);
+			//int x = Integer.parseInt(first);
+		}else{
+		 second=JOptionPane.showInputDialog(null,"Enter Y","Second Number",JOptionPane.INFORMATION_MESSAGE);
+		 y = Integer.parseInt(second);}
+		if(y<190){
+			JOptionPane.showMessageDialog(null, "Y must be more than 189!","Error",JOptionPane.ERROR_MESSAGE);
+			second=JOptionPane.showInputDialog(null,"Enter Y","Second Number",JOptionPane.INFORMATION_MESSAGE);
+			y = Integer.parseInt(second);
+			//int x = Integer.parseInt(first);
+		}
+			Graphics2D g2d=(Graphics2D) g;
+			//borders
+			g2d.drawLine(40, 50, x+40, 50);//first horizontal 240=x
+			g2d.drawLine(40, 50, 40, (y+50)/2);//first vertical
+			g2d.drawLine(40, (y+50)/3*2, 40, 50+y);
+			g2d.drawLine(40, 50+y, x+40, 50+y);//bottom horizontal
+			g2d.drawLine(x+40, 50, x+40, (y+50)*3/4);//last vertical
+			
+			//horizontals inners
+			g2d.drawLine(40, (y+50)/4, (x+40)/3, (y+50)/4);//first horizontal
+			g2d.drawLine((x+40)*3/4, (y+50)/4, x+40, (y+50)/4);//continuation
+			g2d.drawLine((40+x)/2, (y+50)/2, (x+40)*3/4, (y+50)/2);
+			//vertical inners
+			g2d.drawLine((40+x)/2, 50, (40+x)/2, (y+50)/2);//firstvertical
+			g2d.drawLine((40+x)/2, (y+50)*3/4, (40+x)/2, 50+y);//proceding downwards
+			
+			g2d.drawLine((x+40)/3, (y+50)/2, (x+40)/3, 50+y);
+			g2d.drawLine((x+40)*3/4, (y+50)*3/4, (x+40)*3/4, 50+y);
+		}
+	public void paint(Graphics g){
+		super.paint(g);
+		drawLines(g);
+	}
+	public static void main(String arg[]){
+		
+		new LinesDrawingingExample();
+	}
+
+}

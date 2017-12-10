@@ -1,0 +1,20 @@
+new Thread( //create internal thread
+	new Runnable(){
+		@Override
+		public void run(){
+			while(progressCounter <= 100){ //create while loop
+				SwingUtilities.invokeLater( //invoke SwingUtilities 
+					new Runnable(){
+						@Override
+						public void run(){ 
+							progressBar.setValue(progressCounter++); //update progressBar
+							if(progressCounter == 100){ //check end ..
+								JOPtionPane.showMessageDialog(null,"Malware Detected!!");
+							}
+						}
+					}
+				);
+			}
+		}
+	}
+);

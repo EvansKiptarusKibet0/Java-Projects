@@ -1,0 +1,6 @@
+Binary encryption algorithm is a backbone of the proposed cryptosystem that will concentrate much on the encryption of binary data using symmetric encryption procedure. This will help us carp security threats by fusing both confusion and diffusion in the cipher text that commonly affect our organizations. The researcher will be using this algorithm coded in java to encrypt data.
+All information security measures try to address at least one of three goals: 
+Protect the confidentiality of data 
+Preserve the integrity of data
+Promote the availability of data for authorized use
+ These goals form the confidentiality, integrity, availability (CIA) triad, the basis of all security programs. Information security professionals who create policies and procedures must consider each goal when creating a plan to protect a computer system.

@@ -1,0 +1,9 @@
+﻿Prototyping is usually done at the cost of the developer. 
+So it should be done using minimal resources.
+ It can be done using Rapid Application Development (RAD) tools. 
+ It is a slow process.
+Too many changes can disturb the rhythm of the development team.
+System Requirements
+The algorithm must allow input of the message, key and sender
+The algorithm should allow browsing of the message sent
+The algorithm must display the cipher text 
